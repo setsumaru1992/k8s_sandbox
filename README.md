@@ -46,6 +46,8 @@ kubectl exec -it init-sample -c main -- sh
   - コンテナをくくる単位
 - controller
   - podに独自の役割を与える（deployment, jobなど）
+  - deployment
+    - マニフェストspec内のtemplate欄でpodの仕様を記載する
 - workload
   - podをくくる単位
 - node
