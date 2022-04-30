@@ -6,6 +6,7 @@ kubectl run hello-world --image=hello-world -it --restart=Never
 
 # 設定ファイル適用
 kubectl apply -f sample_nginx.yml
+# 自作dockerイメージを使う場合はDockerfileを使ってdocker buildして付けたtagをマニフェストで指定
 ```
 
 # コンテナでpodやworkloadを削除
@@ -25,6 +26,9 @@ kubectl get pod -o wide
 
 # ログ確認
 kubectl logs hello-world
+
+# podの立ち上げ状況を見る
+kubectl describe hello-world
 
 # 全情報見る
 kubectl get all
