@@ -53,5 +53,6 @@ kubectl exec -it init-sample -c main -- sh
 - node
   - マシン
 - service
+  - pod群への受付窓口
   - privateネットワークをpublicネットワークと接続する
 - ingress
