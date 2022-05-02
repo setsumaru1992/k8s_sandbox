@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job # マニフェスト適用時点で実行される。一時実行するときに適用
+metadata:
+  name: normal-end
+spec: 
+  template:
+    spec:
+      containers:
+      - name: busybox
+        image: busybox:latest
+        command: ["sh", "-c", "sleep 5; exit 0"]
+      restartPolicy: Never
+  completions: 6

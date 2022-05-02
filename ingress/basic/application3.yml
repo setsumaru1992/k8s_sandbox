@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-deployment
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: liberty
+  template:
+    metadata:
+      labels:
+        app: liberty
+    spec:
+      containers:
+      - name: open-liberty
+        image: openliberty/open-liberty:javaee8-ubi-min-amd64
+        ports:
+        - containerPort: 9080
+          name: httpport
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: java-service
+spec:
+  ports:
+  - port: 9080
+    targetPort: 9080
+  selector:
+    app: java-service

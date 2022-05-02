@@ -56,3 +56,4 @@ kubectl exec -it init-sample -c main -- sh
   - pod群への受付窓口
   - privateネットワークをpublicネットワークと接続する
 - ingress
+  - URL解決とかwebのアプリケーションの最前面でリッチなことをする
